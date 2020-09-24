@@ -40,6 +40,15 @@ body {
     .btn-k14 {
         margin-top: 50px;
     }
+    .avarta-22h {
+        img {
+            height: 100vh;
+            object-fit: cover;
+        }
+    }
+    .fp-scrollable {
+        width: 100%;
+    }
 }
 #menu-adm {
     display: inline-flex;
@@ -103,6 +112,22 @@ body {
         &:last-child {
             &:after {
                 display: none;
+            }
+        }
+    }
+    &.active {
+        li {
+            &:after {
+                background: #000000;
+            }
+            a {
+                color: #000000;
+                &:after {
+                    border: .5px solid #000000;
+                }
+                &:before {
+                    background: #000000;
+                }
             }
         }
     }
@@ -184,6 +209,26 @@ body {
         height: 100%;
         width: 86px;
     }
+    &:after {
+        content: "";
+        background-image: linear-gradient(#fbf3f1, #f3dbd5);
+        height: calc(50% - 145px);
+        width: 86px;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 43px);
+        z-index: 3;
+    }
+    &:before {
+        content: "";
+        background-image: linear-gradient(#e2c9c2, #e1c8c1);
+        height: calc(50% - 55px);
+        width: 86px;
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 43px);
+        z-index: 3;
+    }
 }
 
 .number {
@@ -196,13 +241,14 @@ body {
     width: 100%;
     height: 190px;
     background-size: contain !important; 
+    z-index: 2;
     &.in-drag {
         @include ease(0s);
     }
     .current, .total { 
         display: inline-block;
     }
-    .total {
+    .total { 
         &:before {
           content: '/';
         }
@@ -228,17 +274,29 @@ body {
     &.number-9 { 
         background: url('../images/face-clock-7.png') no-repeat center center;
     }
-    // &.number-10 {
-    //     background: url('../images/face-clock-8.png') center center;
-    // } 
+    &.number-10 {
+        background: url('../images/face-clock-8.png') center center;
+    }
+} 
+
+.hver-ripper { 
+    width: 162px;
+    height: 190px;
+    position: absolute;
+    z-index: 4;
+    right: calc(50% - 81px);
+    top: calc(50% - 95px);
+    background: url(../images/ripper.png) no-repeat center center;
+    border-radius: 35px;
+    z-index: 2;
     &:after {
         content: "";
         background: url(../images/day-1.png) center center no-repeat;
         position: absolute;
         height: 60px;
-        width: 125px;
+        width: 123px;
         background-size: contain;
-        left: calc(50% - 60px);
+        left: calc(50% - 59px);
         top: calc(50% - 131px);
         z-index: 1;
     }
@@ -253,25 +311,9 @@ body {
         top: calc(50% + 75px);
         z-index: 1;
     }
-} 
-
-.hver-ripper { 
-    width: 162px;
-    height: 190px;
-    position: absolute;
-    z-index: 4;
-    right: calc(50% - 81px);
-    top: calc(50% - 95px);
-    background: url(../images/ripper.png) no-repeat center center;
-    border-radius: 35px;
-    z-index: 2;
-    // &:before { 
-    //     content: url('../images/day-2.png');
-    //     position: absolute;
-    // }
 }
 .number-active {
-    top: calc(50% - 95px) !important;
+    top: calc(50% - 144px) !important;
 }
 
 .track-upper {
@@ -371,17 +413,25 @@ body {
     width: 100%;
     padding-right: 43px;
     box-sizing: border-box;
+    .item {
+        overflow: hidden;
+    }
     img {
         max-width: 100%;
         width: 100%;
         object-fit: cover;
+        transition: .6s all;
+        &:hover {
+            transition: .6s all;
+            transform: scale(1.04);
+        }
     }
 }
 .txt-thumbs {
     flex: 0 0 50%;
     width: 100%;
     max-width: 50%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     background: url(../images/bg.png);
@@ -411,4 +461,26 @@ body {
     width: 100%;
     height: 100% !important;
     align-items: center;
+}
+.bg-blue {
+    .txt-thumbs {
+        background: url('../images/bg-blue.png') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+    }
+    .desc-thumbs {
+        h3 {
+            color: #fff;
+        }
+    }
+}
+.effect-shine {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 1.5s linear infinite;
+}
+
+@keyframes shine {
+  from { -webkit-mask-position: 150%; }
+  to { -webkit-mask-position: -50%; }
 }

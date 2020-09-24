@@ -19,24 +19,9 @@ jQuery(document).ready(function($){
   $('#fp-container').fullpage({
     scrollOverflow: true,
     scrollingSpeed: 1200,
-    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], 
-    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+    anchors: ['24h', 'desc', '06H00', '07H00', '11H00', '12H00', '16H00', '18H00', '20H00', '22H00', 'end'],
     menu: '#menu-adm', 
     slidesNavigation: true,
-    afterRender: function() {
-      totalSections = $('.fp-section').length;
-      totalDisplay = totalSections;
-      $('.total').html(totalDisplay);
-
-      for(i = 1; i < totalSections; i++) {
-        var container = grabber.parent();
-        var containerheight = container.innerHeight();
-        var denominator =  totalSections / i;
-        var checkTop = (containerheight - 40 - grabber.height() ) * i / (totalSections -1);
-        checkTop = parseInt(checkTop);
-        positionMarkers[i] = checkTop;
-      }
-    },
     onLeave: function(index, nextIndex, direction){
       currentIndex = nextIndex;
       $('.current').html(currentIndex);
@@ -60,12 +45,14 @@ jQuery(document).ready(function($){
             'opacity': '0',
             'z-index': '-1'
           });
+          $('#menu-adm').removeClass('active');
       }
       if(currentIndex == 2) {
            $('.section-track').css({
             'opacity': '0',
             'z-index': '-1'
           });
+           $('#menu-adm').removeClass('active');
       }
       if(currentIndex == 3) {
            $('.section-track').css({
@@ -73,6 +60,7 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-3').removeClass('number-4');
+           $('#menu-adm').addClass('active');
       }
       if(currentIndex == 4) {
            $('.section-track').css({
@@ -80,6 +68,7 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-4').removeClass('number-5 number-3');
+           $('#menu-adm').addClass('active');
       }
       if(currentIndex == 5) {
            $('.section-track').css({
@@ -87,6 +76,7 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-5').removeClass('number-6 number-4');
+           $('#menu-adm').addClass('active');
       }
       if(currentIndex == 6) {
            $('.section-track').css({
@@ -94,6 +84,7 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-6').removeClass('number-7 number-5');
+           $('#menu-adm').addClass('active');
       }
       if(currentIndex == 7) {
            $('.section-track').css({
@@ -101,6 +92,7 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-7').removeClass('number-8 number-6');
+           $('#menu-adm').addClass('active');
       }
       if(currentIndex == 8) {
            $('.section-track').css({
@@ -108,13 +100,23 @@ jQuery(document).ready(function($){
             'z-index': '3'
           });
            $('.adm_emag .number').addClass('number-8').removeClass('number-9 number-7');
+           $('#menu-adm').removeClass('active');
       }
       if(currentIndex == 9) {
            $('.section-track').css({
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-9').removeClass('number-8');
+           $('.adm_emag .number').addClass('number-9').removeClass('number-8 number-10');
+           $('#menu-adm').removeClass('active');
+      }
+      if(currentIndex == 10) {
+           $('.section-track').css({
+            'opacity': '1',
+            'z-index': '3'
+          });
+           $('.adm_emag .number').addClass('number-10').removeClass('number-9');
+           $('#menu-adm').removeClass('active');
       }
     }
   });
@@ -131,14 +133,14 @@ jQuery(document).ready(function($){
   function checkWindowHeight(window_height) {
     positionMarkers.length = 0;
     positionMarkers = [0];
-    for(i = 1; i < totalSections; i++) {
-      var container = grabber.parent();
-      var containerheight = container.innerHeight();
-      var denominator =  totalSections / i;
-      var checkTop = (containerheight - 40 - grabber.height() ) * i / (totalSections -1);
-      checkTop = parseInt(checkTop);
-      positionMarkers[i] = checkTop;
-    }
+    // for(i = 1; i < totalSections; i++) {
+    //   var container = grabber.parent();
+    //   var containerheight = container.innerHeight();
+    //   var denominator =  totalSections / i;
+    //   var checkTop = (containerheight - 40 - grabber.height() ) * i / (totalSections -1);
+    //   checkTop = parseInt(checkTop);
+    //   positionMarkers[i] = checkTop;
+    // }
 
   }
 
@@ -148,6 +150,10 @@ jQuery(document).ready(function($){
   });
 
   var clicked = false;
+  var currentPos = document.getElementsByClassName('number')[0].offsetTop;
+  var body = document.body, html = document.documentElement;
+
+  window.heightfull = Math.max( body.offsetHeight, html.clientHeight, html.offsetHeight );
   $(grabber).on({
     'mousemove': function(e) {
       clicked && updateScrollPos(e);
@@ -156,11 +162,13 @@ jQuery(document).ready(function($){
       clicked = true;
       grabber.addClass('in-drag');
       grabber.removeClass('number-active');
+      // $('#moveUp').click();
 
     },
     'mouseup': function() {
       clicked = false;
       grabber.removeClass('in-drag');
+      // $('#moveDown').click();
     },
   })
   $(window).on({
@@ -182,28 +190,32 @@ jQuery(document).ready(function($){
         // 'top' : (correctSlidePosition) + 'px'
         'top' : 'calc(50% - 144px)'
       }); 
+       checkScroll = false;
+
     }
   })
-
+window.checkScroll = false;
   var updateScrollPos = function(e) {
     var sliderpos = grabber.position();
-    // Loop through the positionMarkers and find the correct slide 
-    // for the current positionMarkers
     var currentSlideIndex;
-    for(i = 0; i < positionMarkers.length; i++) {
-      // if the grabber is past the positionMarker, set marker as currentSlideIndex
-      // once we have looped through, the last one that gets set should be the current slide 
-      if(sliderpos.top >= positionMarkers[i]){
-       currentSlideIndex = i + 1; // add + 1 because of arrays starting at 0
-      }
+    var updateHeight = parseInt(document.getElementsByClassName('number')[0].offsetTop);
+    if(updateHeight <= (heightfull *0.2)&&checkScroll==false) {
+      $('#moveUp').click();
+      checkScroll = true;
     }
-    // if the slide it SHOULD be does not match the slide it is, make it
-    if (currentSlideIndex != currentIndex ){
-      // console.log("switching slides");
-      isDragging = true;
-      $.fn.fullpage.moveTo(currentSlideIndex);
+    if(updateHeight >= (heightfull *0.6)&&checkScroll==false) {
+      $('#moveDown').click();
+      checkScroll = true;
     }
+ 
   }
+
+  $(document).on('click', '#moveDown', function(){
+    $.fn.fullpage.moveSectionDown();
+  });
+  $(document).on('click', '#moveUp', function(){
+    $.fn.fullpage.moveSectionUp();
+  });
 
 
   $(document).on('wheel', function (e) {
@@ -256,3 +268,32 @@ jQuery(document).ready(function($){
   }
 });
 
+
+
+var rect = $('.section')[0].getBoundingClientRect();
+var mouse = {x: 0, y: 0, moved: false};
+
+$(".desc-thumbs, .caption").mousemove(function(e) {
+  mouse.moved = true;
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top; 
+});
+ 
+TweenLite.ticker.addEventListener('tick', function(){
+  if (mouse.moved){    
+    parallaxIt(".desc-thumbs, .caption", -35); 
+  }
+  mouse.moved = false;
+});
+ 
+function parallaxIt(target, movement) {
+  TweenMax.to(target, 1, {
+    x: (mouse.x - rect.width / 2) / rect.width * movement,
+    y: (mouse.y - rect.height / 2) / rect.height * movement
+  });
+}
+
+$(window).on('resize scroll', function(){
+  rect = $('.desc-thumbs, .caption')[0].getBoundingClientRect();
+})
+ 
