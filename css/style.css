@@ -127,6 +127,14 @@ body {
     #menu-adm.active li a:before {
       background: #000000; }
 
+.slider-nav .slick-current {
+  width: 0px !important; }
+.slider-nav .item img {
+  height: 200px; }
+
+.slider-for .item img {
+  height: calc(100vh - 200px); }
+
 .menu-scroll {
   position: absolute;
   z-index: 1001;
@@ -161,6 +169,7 @@ body {
   background: url("../images/banner-2.jpg") no-repeat center center; }
 
 .section-track {
+  opacity: 0;
   position: fixed;
   top: 0;
   right: calc(50% - 81px);
@@ -170,6 +179,7 @@ body {
   height: 100vh;
   transition: .5s all !important; }
   .section-track.active {
+    transition: 2.5s all !important;
     opacity: 0;
     z-index: -1;
     visibility: visible; }
@@ -192,16 +202,28 @@ body {
     position: absolute;
     top: 0;
     left: calc(50% - 43px);
-    z-index: 3; }
+    z-index: 3;
+    opacity: 1;
+    transition: 2.4s ease; }
   .track:before {
     content: "";
-    background-image: linear-gradient(#e2c9c2, #e1c8c1);
-    height: calc(50% - 55px);
+    background-image: linear-gradient(#e5ccc4, #e1c8c1);
+    height: calc(50% - 70px);
     width: 86px;
     position: absolute;
     bottom: 0;
     left: calc(50% - 43px);
-    z-index: 3; }
+    z-index: 3;
+    opacity: 1;
+    transition: 2.4s ease; }
+  .track.active:after {
+    opacity: 0;
+    transition: 0s ease; }
+  .track.active:before {
+    opacity: 0;
+    transition: 0s ease; }
+  .track.active .number {
+    z-index: 5; }
 
 .number {
   -webkit-transition: 1.2s ease;
@@ -216,7 +238,7 @@ body {
   width: 100%;
   height: 190px;
   background-size: contain !important;
-  z-index: 2; }
+  z-index: 5; }
   .number.in-drag {
     -webkit-transition: 0s ease;
     -moz-transition: 0s ease;

@@ -16,20 +16,21 @@
 <body> 
     <header></header> 
 	<main>
-		<div class="menu-scroll">
+		<div class="menu-scroll"> 
 			<ul id="menu-adm">
-				<li data-menuanchor="24h"><a href="#24h">INTRO</a></li> 
-				<li data-menuanchor="desc"><a href="#desc">desc</a></li>
-				<li data-menuanchor="06H00"><a href="#06H00">07h00</a></li>
-				<li data-menuanchor="07H00"><a href="#07H00">11h00</a></li> 
-				<li data-menuanchor="11H00"><a href="#11H00">12h00</a></li> 
-				<li data-menuanchor="12H00"><a href="#12H00">16h00</a></li>  
-				<li data-menuanchor="16H00"><a href="#16H00">18h00</a></li> 
-				<li data-menuanchor="18H00"><a href="#18H00">20h00</a></li> 
-				<li data-menuanchor="20H00"><a href="#20H00">22h00</a></li> 
+				<li data-menuanchor="home"><a href="#home">Home</a></li> 
+				<li data-menuanchor="intro"><a href="#intro">Intro</a></li>
+				<li data-menuanchor="06H00"><a href="#06H00">06h00</a></li>
+				<li data-menuanchor="07H00"><a href="#07H00">07h00</a></li> 
+				<li data-menuanchor="11H00"><a href="#11H00">11h00</a></li> 
+				<li data-menuanchor="12H00"><a href="#12H00">12h00</a></li>  
+				<li data-menuanchor="16H00"><a href="#16H00">16h00</a></li>  
+				<li data-menuanchor="18H00"><a href="#18H00">18h00</a></li> 
+				<li data-menuanchor="20H00"><a href="#20H00">20h00</a></li> 
+				<li data-menuanchor="22H00"><a href="#22H00">22h00</a></li> 
 				<li data-menuanchor="end"><a href="#end">end</a></li> 
 			</ul>
-		</div>
+		</div> 
 		<div class="adm_emag"> 
 			<nav class="section-track">
 			  <div class="track">
@@ -41,7 +42,7 @@
 			</nav> 
 			<div class="btn-move-slide" style="position: fixed;top:0;left: 0; z-index: 1001;opacity: 0">
 				<button id="moveDown">Move down</button>
-				<button id="moveUp">Move up</button>
+				<button id="moveUp">Move up</button> 
 			</div>
 			<section id="fp-container">
 				<section class="section-1 section fp-auto-height-responsive section-bg-1">
@@ -74,9 +75,13 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for">
-					    		<div class="item"><img src="images/thumb-3.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-1.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-2.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-3-3.jpg" alt=""></a></div>
@@ -97,9 +102,13 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for">
-					    		<div class="item"><img src="images/thumb-4.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-1.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-2.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-4-3.jpg" alt=""></a></div>
@@ -120,9 +129,13 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for">
-					    		<div class="item"><img src="images/thumb-5.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-1.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-2.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-5-3.jpg" alt=""></a></div>
@@ -141,9 +154,13 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for">
-					    		<div class="item"><img src="images/thumb-6.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-1.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-2.jpg" alt=""></a></div>
 					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-6-3.jpg" alt=""></a></div>
@@ -162,12 +179,16 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for">
-					    		<div class="item"><img src="images/thumb-7.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-1.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-2.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-3.jpg" alt="" height="213"></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-7-3.jpg" alt=""></a></div>
 					    	</div>
 					    </div> 
 					    <div class="txt-thumbs">
@@ -184,12 +205,16 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for"> 
-					    		<div class="item"><img src="images/thumb-8.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-1.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-2.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-3.jpg" alt="" height="213"></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-8-3.jpg" alt=""></a></div>
 					    	</div>
 					    </div> 
 					    <div class="txt-thumbs">
@@ -206,12 +231,16 @@
 				    <div class="section-inner section-thumbs p-0">
 					    <div class="slide-thumb"> 
 					    	<div class="thumb-for slider-for"> 
-					    		<div class="item"><img src="images/thumb-9.jpg" alt=""></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-3.jpg" alt=""></a></div>
 					    	</div>
 					    	<div class="thum-for slider-nav">
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-1.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-2.jpg" alt="" height="213"></a></div>
-					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-3.jpg" alt="" height="213"></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-1.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-2.jpg" alt=""></a></div>
+					    		<div class="item"><a href="javascript:void(0)"><img src="images/thumb-9-3.jpg" alt=""></a></div>
 					    	</div>
 					    </div> 
 					    <div class="txt-thumbs">
@@ -229,7 +258,7 @@
 					    <div class="slide-thumb"> 
 					    	<div class="avarta-22h"><img src="images/22h.png" alt=""></div>
 					    </div> 
-					    <div class="txt-thumbs">
+					    <div class="txt-thumbs"> 
 					    	<div class="desc-thumbs">
 					    		<div class="btn-k14"><img src="images/btn-white.png" alt=""></div>
 					    		<h3 class="effect-shine">Kết lại một ngày <br> thật trọn vẹn</h3>
