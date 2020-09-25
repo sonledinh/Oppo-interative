@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="css/lightbox.min.css" />
     <link rel="stylesheet" type="text/css" title="" href="css/slick.css">
     <link rel="stylesheet" type="text/css" title="" href="css/style.css">
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-</head>
+</head> 
 <body> 
-    <header></header>  
+    <header></header>   
 	<main>
 		<div class="menu-scroll"> 
 			<ul id="menu-adm">
@@ -24,7 +23,7 @@
 				<li data-menuanchor="07H00"><a href="#07H00">07h00</a></li> 
 				<li data-menuanchor="11H00"><a href="#11H00">11h00</a></li> 
 				<li data-menuanchor="12H00"><a href="#12H00">12h00</a></li>  
-				<li data-menuanchor="16H00"><a href="#16H00">16h00</a></li>  
+				<li data-menuanchor="16H00"><a href="#16H00">16h00</a></li>   
 				<li data-menuanchor="18H00"><a href="#18H00">18h00</a></li>  
 				<li data-menuanchor="20H00"><a href="#20H00">20h00</a></li> 
 				<li data-menuanchor="22H00"><a href="#22H00">22h00</a></li> 
@@ -35,17 +34,22 @@
 			<nav class="section-track">
 			  <div class="track">
 			  	<img src="images/o-clock.jpg" class="img-fluid" style="pointer-events: none;">
-			    <div class="number number-active">
+			    <div class="number number-active number-3 number-4 number-5 number-6 number-7 number-8 number-9 number-10">
 			    	<div class="hver-ripper"></div> 
-			    </div>
+			    </div> 
 			  </div>   
 			</nav> 
-			<div class="btn-move-slide" style="position: fixed;top:0;left: 0; z-index: 1001;opacity: 0">
-				<button id="moveDown">Move down</button>
-				<button id="moveUp">Move up</button> 
-			</div>
 			<section id="fp-container">
 				<section class="section-1 section section-bg-1">
+					<div class="frame">
+						<div  
+							id="gl" 
+							data-imageOriginal="images/banner-1.jpg" 
+							data-imageDepth="images/mount-map.jpg"  
+							data-horizontalThreshold="15" 
+							data-verticalThreshold="25">
+						</div>
+					</div> 
 				    <div class="section-inner">
 				    	<div class="caption">
 					      	<div class="logo-bg1 effect-shine"><img src="images/24h.png" alt=""></div>
@@ -58,6 +62,15 @@
 				    </div> 
 				</section>
 				<section class="section-2 section section-bg-2">
+					<!-- <div class="frame"> 
+						<div 
+							id="gl" 
+							data-imageOriginal="images/banner-2.jpg" 
+							data-imageDepth="images/mount-map.jpg"  
+							data-horizontalThreshold="15"  
+							data-verticalThreshold="25">
+						</div>
+					</div> -->
 				    <div class="section-inner">
 					    <div class="caption">
 					      	<div class="desc"> 
@@ -268,31 +281,38 @@
 					    </div>
 				    </div> 
 				</section> 
-				<!-- <section class="section-10 section section-footer">
-				    <div class="section-inner p-0">
-					    <div class="adm-footer">
-					    	<div class="txt-footer">
-					    		<div class="desc-thumbs">
-					    			<p>Chẳng còn gò bó trong những tính năng nghe gọi đơn thuần, sự mới mẻ mà OPPO Reno4 và OPPO Watch mang đến mỗi ngày đã giúp những người trẻ như Quyên được thực sự tận hưởng trọn vẹn từng giây phút sống đúng như cách mà họ mong muốn. Không chỉ là “người đồng hành”, bộ đôi siêu phẩm công nghệ này còn cho thấy gu thẩm mỹ độc đáo cùng phong cách sống hiện đại, quan tâm đến sức khỏe của mỗi bạn trẻ ngày nay. Xem thêm thông tin về Reno4, Reno4 Pro, OPPO Watch tại đây </p>
-					    			<div class="btn-k14"><img src="images/btn-white.png" alt=""></div>
-					    		</div>
+				<section class="section-11 section bg-blue">
+				    <div class="section-inner section-end">
+					    <div class="leff">
+					    	<div class="desc">
+					    		<p>Chẳng còn gò bó trong những tính năng nghe gọi đơn thuần, sự mới mẻ mà OPPO Reno4 và OPPO Watch mang đến mỗi ngày đã giúp những người trẻ như Quyên được thực sự tận hưởng trọn vẹn từng giây phút sống đúng như cách mà họ mong muốn. Không chỉ là “người đồng hành”, bộ đôi siêu phẩm công nghệ này còn cho thấy gu thẩm mỹ độc đáo cùng phong cách sống hiện đại, quan tâm đến sức khỏe của mỗi bạn trẻ ngày nay. Xem thêm thông tin về Reno4, Reno4 Pro, OPPO Watch <a href="">tại đây</a> </p>
 					    	</div>
-					    	<div class="img-footer"><img src="images/ft.png" alt=""></div>
+					    	<div class="btn-k14"><img src="images/btn-white.png" alt=""></div>
+					    </div>
+					    <div class="right">
+					    	<ul>
+					    		<li class="eff-1"><img src="images/end-1.png" alt=""></li>
+					    		<li class="eff-2"><img src="images/end-2.png" alt=""></li>
+					    		<li class="eff-1"><img src="images/end-1.png" alt=""></li>
+					    		<li class="eff-2"><img src="images/end-2.png" alt=""></li>
+					    		<li class="eff-1"><img src="images/end-1.png" alt=""></li>
+					    	</ul>
 					    </div>
 				    </div> 
-				</section>  -->
+				</section> 
 			</section> 
 		</div> 
 	</main>
 	<footer></footer> 
 
 	<!--Link js-->
-	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/effect-3d.js"></script> 
+	<script type="text/javascript" src="js/TweenMax.min.js"></script> 
 	<script type="text/javascript" src="js/lightbox.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/jquery.ripples.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
-	<!-- <script type="text/javascript" src="js/scrolloverflow.js"></script> -->
+	<script type="text/javascript" src="js/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/fullpage.min.js"></script>
 	<script type="text/javascript" src="js/private.js"></script>
 </body>

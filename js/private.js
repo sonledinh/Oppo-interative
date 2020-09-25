@@ -1,19 +1,11 @@
 
-$(document).ready(function() {
-  $('.hver-ripper').ripples({
-    resolution: 512,
-    dropRadius: 20,
-    perturbance: 0.04,
-  });
-});
 
-jQuery(document).ready(function($){ 
-
+jQuery(document).ready(function($){
   var totalSections;
   var positionMarkers = [0];
   var grabber = $('.number');
   var currentIndex = 1;
-  var isDragging = false;
+  var isDragging = false; 
   var hideTrack = 1;
 
   $('#fp-container').fullpage({
@@ -57,7 +49,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-3').removeClass('number-4');
+           $('.adm_emag .number').addClass('number-3').removeClass('number-4 number-5 number-6 number-7 number-8 number-9 number-10');
            $('#menu-adm, .section-track').addClass('active');
       }
       if(currentIndex == 4) {
@@ -65,7 +57,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-4').removeClass('number-5 number-3');
+           $('.adm_emag .number').addClass('number-4').removeClass('number-5 number-3 number-6 number-7 number-8 number-9 number-10');
            $('#menu-adm, .section-track').addClass('active');
       }
       if(currentIndex == 5) {
@@ -73,7 +65,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-5').removeClass('number-6 number-4');
+           $('.adm_emag .number').addClass('number-5').removeClass('number-6 number-4 number-7 number-8 number-9 number-10 number-3');
            $('#menu-adm, .section-track').addClass('active');
       }
       if(currentIndex == 6) {
@@ -81,7 +73,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-6').removeClass('number-7 number-5');
+           $('.adm_emag .number').addClass('number-6').removeClass('number-7 number-5 number-4 number-3 number-8 number-9 number-10');
            $('#menu-adm, .section-track').addClass('active');
       }
       if(currentIndex == 7) {
@@ -89,7 +81,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-7').removeClass('number-8 number-6');
+           $('.adm_emag .number').addClass('number-7').removeClass('number-8 number-6 number-3 number-4 number-5 number-9 number-10');
            $('#menu-adm, .section-track').addClass('active');
       }
       if(currentIndex == 8) {
@@ -97,7 +89,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-8').removeClass('number-9 number-7');
+           $('.adm_emag .number').addClass('number-8').removeClass('number-9 number-7 number-3 number-4 number-5 number-6 number-10');
            $('#menu-adm').removeClass('active');
            $('.section-track').addClass('active');
       }
@@ -106,7 +98,7 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-9').removeClass('number-8 number-10');
+           $('.adm_emag .number').addClass('number-9').removeClass('number-8 number-10 number-3 number-4 number-5 number-6 number-7');
            $('#menu-adm').removeClass('active');
            $('.section-track').addClass('active');
       }
@@ -115,26 +107,21 @@ jQuery(document).ready(function($){
             'opacity': '1',
             'z-index': '3'
           });
-           $('.adm_emag .number').addClass('number-10').removeClass('number-9');
+           $('.adm_emag .number').addClass('number-10').removeClass('number-9 number-3 number-4 number-5 number-6 number-7 number-8');
+           $('#menu-adm').removeClass('active');
+           $('.section-track').addClass('active');
+      }
+      if(currentIndex == 11) {
+           $('.section-track').css({
+            'opacity': '0',
+            'z-index': '-1'
+          });
+           $('.adm_emag .number').removeClass('number-9 number-3 number-4 number-5 number-6 number-7 number-8 number-10');
            $('#menu-adm').removeClass('active');
            $('.section-track').addClass('active');
       }
     }
   });
-
-
-  var window_height = jQuery(window).height();
-  checkWindowHeight(window_height);
-
-  jQuery(window).resize(function(){
-    window_height = jQuery(window).width();
-    checkWindowHeight(window_height);
-  });
-
-  function checkWindowHeight(window_height) {
-    positionMarkers.length = 0;
-    positionMarkers = [0];
-  }
 
   $( grabber ).draggable({ 
     axis: "y", 
@@ -186,60 +173,50 @@ jQuery(document).ready(function($){
 
     }
   })
-window.checkScroll = false;
+  window.checkScroll = false;
   var updateScrollPos = function(e) {
     var sliderpos = grabber.position();
     var currentSlideIndex;
     var updateHeight = parseInt(document.getElementsByClassName('number')[0].offsetTop);
     if(updateHeight <= (heightfull *0.3)&&checkScroll==false) {
-      $('#moveUp').click();
+      $.fn.fullpage.moveSectionUp();
       checkScroll = true;
     }
     if(updateHeight >= (heightfull *0.5)&&checkScroll==false) {
-      $('#moveDown').click();
+      $.fn.fullpage.moveSectionDown();
       checkScroll = true;
     }
- 
   }
-
-  $(document).on('click', '#moveDown', function(){
-    $.fn.fullpage.moveSectionDown();
-  });
-  $(document).on('click', '#moveUp', function(){
-    $.fn.fullpage.moveSectionUp();
-  });
-
-
+ 
   $(document).on('wheel', function (e) {
       $('.number').css({
         'top' : 'calc(50% - 144px)'
       });
   })
 
-
   $('.slider-for').slick({
-    autoplay: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    asNavFor: '.slider-nav',
-});
-$('.slider-nav').slick({
-    autoplay:false,
-    arrow:false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.slider-for',
-    dots: false,
-    focusOnSelect: true,
-    prevArrow: '<button class="prev"><img src="images/left.svg" alt=""></button>',
-    nextArrow: '<button class="next"><img src="images/right.svg" alt=""></button>',
-});
+      autoplay: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      asNavFor: '.slider-nav',
+  });
+  $('.slider-nav').slick({
+      autoplay:false,
+      arrow:false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for', 
+      dots: false,
+      focusOnSelect: true,
+      prevArrow: '<a href=""javascript:void(0)" class="prev"></a>',
+      nextArrow: '<a href=""javascript:void(0)" class="next"></a>',
+  });
 
   $('#menu-adm a').click(function(event) {
     $('.number').css({
         'top' : 'calc(50% - 144px)'
-      });
+      }); 
     $('.number').click();
   });
 
@@ -254,34 +231,102 @@ $('.slider-nav').slick({
       'z-index': '4'
     });
   }
-});
+
+  $('.hver-ripper').ripples({
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04,
+  }); 
 
 
-
-var rect = $('.section')[0].getBoundingClientRect();
-var mouse = {x: 0, y: 0, moved: false};
-
-$(".desc-thumbs, .caption").mousemove(function(e) {
-  mouse.moved = true;
-  mouse.x = e.clientX - rect.left;
-  mouse.y = e.clientY - rect.top; 
-});
- 
-TweenLite.ticker.addEventListener('tick', function(){
-  if (mouse.moved){    
-    parallaxIt(".desc-thumbs, .caption", -35); 
-  }
-  mouse.moved = false;
-});
- 
-function parallaxIt(target, movement) {
-  TweenMax.to(target, 1, {
-    x: (mouse.x - rect.width / 2) / rect.width * movement,
-    y: (mouse.y - rect.height / 2) / rect.height * movement
+  var rect = $('.section')[0].getBoundingClientRect();
+  var mouse = {x: 0, y: 0, moved: false};
+  $(".desc-thumbs, .caption").mousemove(function(e) {
+    mouse.moved = true;
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top; 
   });
-}
+  TweenLite.ticker.addEventListener('tick', function(){
+    if (mouse.moved){    
+      parallaxIt(".desc-thumbs, .caption", -35); 
+    }
+    mouse.moved = false;
+  });
+  function parallaxIt(target, movement) {
+    TweenMax.to(target, 1, {
+      x: (mouse.x - rect.width / 2) / rect.width * movement,
+      y: (mouse.y - rect.height / 2) / rect.height * movement
+    });
+  }
+  $(window).on('resize scroll', function(){
+    rect = $('.desc-thumbs, .caption')[0].getBoundingClientRect();
+  })
 
-$(window).on('resize scroll', function(){
-  rect = $('.desc-thumbs, .caption')[0].getBoundingClientRect();
-})
- 
+  var hoverMouse = function($el) {
+  $el.each(function() {
+    var $self = $(this);
+    var hover = false;
+    var offsetHoverMax = $self.attr("offset-hover-max") || 0.7;
+    var offsetHoverMin = $self.attr("offset-hover-min") || 0.5;
+
+    var attachEventsListener = function() {
+      $(window).on("mousemove", function(e) {
+        
+        var hoverArea = hover ? offsetHoverMax : offsetHoverMin;
+        var cursor = {
+          x: e.clientX,
+          y: e.clientY + $(window).scrollTop()
+        };
+        var width = $self.outerWidth();
+        var height = $self.outerHeight();
+        var offset = $self.offset();
+        var elPos = {
+          x: offset.left + width / 2,
+          y: offset.top + height / 2
+        };
+        var x = cursor.x - elPos.x;
+        var y = cursor.y - elPos.y;
+        var dist = Math.sqrt(x * x + y * y);
+
+        var mutHover = false;
+
+        if (dist < width * hoverArea) {
+          mutHover = true;
+          if (!hover) {
+            hover = true;
+          }
+          onHover(x, y);
+        }
+        if (!mutHover && hover) {
+          onLeave();
+          hover = false;
+        }
+      });
+    };
+
+    var onHover = function(x, y) {
+      TweenMax.to($self, 0.2, {
+        x: x * 0.1,
+        y: y * 0.1,
+        rotation: x * 0.02,
+        ease: Power2.easeOut
+      });
+    };
+    var onLeave = function() {
+      TweenMax.to($self, 0.1, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotation: 0,
+        ease: Elastic.easeOut.config(1, 0.1)
+      });
+    };
+
+      attachEventsListener();
+    });
+  };
+
+  hoverMouse($('.section-end .right ul li'));
+
+});
+  
