@@ -132,7 +132,7 @@ body {
       .adm_emag .section-end .right li:hover:after {
         transition: .3s all;
         top: -2px;
-        left: -25px; }
+        left: 0; }
     .adm_emag .section-end .right .eff-1:after {
       background: url(../images/end-1.png) no-repeat right top; }
     .adm_emag .section-end .right .eff-2:after {
@@ -236,14 +236,16 @@ body {
 .section {
   background-size: cover !important; }
 
-.section-bg-1 .section-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center; }
+.section-bg-1 {
+  background: url("../images/banner-1.jpg") no-repeat top right; }
+  .section-bg-1 .section-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center; }
 
 .section-bg-2 {
   background: url("../images/banner-2.jpg") no-repeat top right; }
