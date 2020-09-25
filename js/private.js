@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 
   $('#fp-container').fullpage({
     scrollOverflow: true,
-    scrollingSpeed: 1200,
+    scrollingSpeed: 600,
     anchors: ['home', 'intro', '06H00', '07H00', '11H00', '12H00', '16H00', '18H00', '20H00', '22H00', 'end'],
     menu: '#menu-adm', 
     slidesNavigation: true, 
@@ -191,11 +191,11 @@ window.checkScroll = false;
     var sliderpos = grabber.position();
     var currentSlideIndex;
     var updateHeight = parseInt(document.getElementsByClassName('number')[0].offsetTop);
-    if(updateHeight <= (heightfull *0.2)&&checkScroll==false) {
+    if(updateHeight <= (heightfull *0.3)&&checkScroll==false) {
       $('#moveUp').click();
       checkScroll = true;
     }
-    if(updateHeight >= (heightfull *0.6)&&checkScroll==false) {
+    if(updateHeight >= (heightfull *0.5)&&checkScroll==false) {
       $('#moveDown').click();
       checkScroll = true;
     }
@@ -232,33 +232,9 @@ $('.slider-nav').slick({
     asNavFor: '.slider-for',
     dots: false,
     focusOnSelect: true,
-    prevArrow: '',
-    nextArrow: '',
+    prevArrow: '<button class="prev"><img src="images/left.svg" alt=""></button>',
+    nextArrow: '<button class="next"><img src="images/right.svg" alt=""></button>',
 });
-
-  // $('.slider-nav').slick({
-  //     autoplay: false,
-  //     arrow: false,
-  //     dots: false,
-  //     slidesToShow: 3,
-  //     slidesToScroll: 1,  
-  //     prevArrow: '',
-  //     nextArrow: '',
-  //     responsive: [
-  //         {
-  //             breakpoint: 767,
-  //             settings: {
-  //                 slidesToShow: 1,
-  //             }
-  //         },
-  //         {
-  //             breakpoint: 480,
-  //             settings: { 
-  //                 slidesToShow: 1,
-  //             }
-  //         }
-  //     ]
-  // });
 
   $('#menu-adm a').click(function(event) {
     $('.number').css({

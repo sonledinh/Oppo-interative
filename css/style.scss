@@ -44,10 +44,19 @@ body {
         img {
             height: 100vh;
             object-fit: cover;
+            cursor: zoom-in;
         }
     }
     .fp-scrollable {
         width: 100%;
+    }
+    .section-footer {
+        background: url('../images/bn-ft.png') center center no-repeat;
+        background-size: cover;
+        color: #fff;
+        .p-0 {
+            padding: 0;
+        }
     }
 }
 #menu-adm {
@@ -146,6 +155,7 @@ body {
     .item {
         img {
             height: calc(100vh - 200px);
+            cursor: zoom-in;
         }
     }
 }
@@ -184,10 +194,10 @@ body {
     background-size: cover !important; 
 }
 .section-bg-1 {
-    background: url('../images/banner-1.jpg') no-repeat center center;
+    background: url('../images/banner-1.jpg') no-repeat top right;
 }
 .section-bg-2 {
-    background: url('../images/banner-2.jpg') no-repeat center center;
+    background: url('../images/banner-2.jpg') no-repeat top right;
 }
  
 @mixin ease ($dur:0.5s) {
@@ -198,8 +208,6 @@ body {
 } 
 
 .section-track {
-    // overflow: hidden; 
-    // padding: 20px 0; 
     opacity: 0;
     position: fixed;
     top: 0;
@@ -210,7 +218,7 @@ body {
     height: 100vh;
     transition: .5s all !important;
     &.active {
-        transition: 2.5s all !important;
+        // transition: 2.5s all !important;
         opacity: 0;
         z-index: -1;
         visibility: visible;
@@ -242,7 +250,7 @@ body {
     }
     &:before {
         content: "";
-        background-image: linear-gradient(#e5ccc4, #e1c8c1);
+        background-image: linear-gradient(#e1c8c0, #e1c8c1);
         height: calc(50% - 70px);
         width: 86px;
         position: absolute;
@@ -422,7 +430,6 @@ body {
         } 
     }
 }
-
 @keyframes svg-scroll {
     0% {
         transform: translateY(-2px);
@@ -460,6 +467,37 @@ body {
         &:hover {
             transition: .6s all;
             transform: scale(1.04);
+        }
+    }
+    .slick-arrow {
+        border: 0;
+        cursor: pointer;
+        width: 39px;
+        height: 39px;
+        border-radius: 100%;
+        position: absolute;
+        top: calc(50% - 15px);
+        background: transparent;
+        outline: none;
+        transition: .3s all;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+        &.prev {
+            left: 20px;
+        }
+        &.next {
+            right: 20px;
+        }
+    }
+    .slider-nav  {
+        &:hover {
+            .slick-arrow {
+                transition: .3s all;
+                opacity: 1;
+                visibility: visible;
+                z-index: 2;
+            }
         }
     }
 }
@@ -515,8 +553,68 @@ body {
     -webkit-mask-size: 200%;
     animation: shine 1.5s linear infinite;
 }
+.lb-data .lb-number {
+    display: none !important;
+}
+.section {
+    .btn-k14, .notice-adm, p {
+        visibility: visible;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-duration: 2s !important;
+        -moz-animation-duration: 2s !important;
+        -ms-animation-duration: 2s !important;
+        -o-animation-duration: 2s !important;
+        animation-duration: 2s !important;
+        -webkit-animation-play-state: running;
+        -moz-animation-play-state: running;
+        -ms-animation-play-state: running;
+        -o-animation-play-state: running;
+        animation-play-state: running;
+        opacity: 0;
+    }
+    &.active {
+        .btn-k14, .notice-adm, p {
+            -webkit-animation-name: fadeInUp;
+            -moz-animation-name: fadeInUp;
+            -o-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .desc-thumbs {
+        max-width: 400px;
+        padding: 0 40px;
+    }
+}
 
 @keyframes shine {
   from { -webkit-mask-position: 150%; }
   to { -webkit-mask-position: -50%; }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}  
+.sp-body-content, .link-source {
+    display: none !important;
+}
+div#mingid_comments_content {
+    display: none !important;
+}
+
+.sp-sticky-header {
+    z-index: 4 !important;
 }
