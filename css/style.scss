@@ -106,31 +106,6 @@ body {
                 transition: .1s all;
                 right: 0;
                 position: relative;
-                img {
-                    transition: .3s all;
-                    right: 0;
-                }
-                &:after {
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    transition: .3s all;
-                    background-size: contain !important;
-                }
-                &:hover {
-                    img {
-                        transition: .3s all;
-                        right: -120%;
-                    }
-                    &:after {
-                        transition: .3s all;
-                        top: -2px;
-                        left: 0;
-                    }
-                }
             }
             .eff-1 {
                 &:after {
@@ -143,6 +118,20 @@ body {
                 }
             }
         }
+    }
+    .bg-eff {
+        background-size: cover !important;
+        width: 110vw;
+        height: 110vh;
+        position: absolute;
+        top: -5vh;
+        left: -5vw;
+    }
+    .bg-eff-1 {
+        background: url('../images/banner-1.jpg') no-repeat top right;
+    }
+    .bg-eff-2 {
+        background: url('../images/banner-2.jpg') no-repeat top right;
     }
 }
 #menu-adm {
@@ -334,8 +323,8 @@ body {
     }
     &:after {
         content: "";
-        background-image: linear-gradient(#fbf3f1, #f3dbd5);
-        height: calc(50% - 145px);
+        background-image: linear-gradient(#f2dbd4, #f3dbd5);
+        height: 100%;
         width: 86px;
         position: absolute;
         top: 0;
@@ -344,27 +333,27 @@ body {
         opacity: 1;
         transition: 2.4s ease;
     }
-    &:before {
-        content: "";
-        background-image: linear-gradient(#e1c8c0, #e1c8c1);
-        height: calc(50% - 70px);
-        width: 86px;
-        position: absolute;
-        bottom: 0;
-        left: calc(50% - 43px);
-        z-index: 3;
-        opacity: 1;
-        transition: 2.4s ease;
-    }
+    // &:before {
+    //     content: "";
+    //     background-image: linear-gradient(#e1c8c0, #e1c8c1);
+    //     height: calc(50% - 70px);
+    //     width: 86px;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: calc(50% - 43px);
+    //     z-index: 3;
+    //     opacity: 1;
+    //     transition: 2.4s ease;
+    // }
     &.active {
-        &:after {
-            opacity: 0;
-            transition: 0s ease;
-        }
-        &:before {
-            opacity: 0;
-            transition: 0s ease;
-        }
+        // &:after {
+        //     opacity: 0;
+        //     transition: 0s ease;
+        // }
+        // &:before {
+        //     opacity: 0;
+        //     transition: 0s ease;
+        // }
         .number {
             z-index: 5;
         }
@@ -434,7 +423,7 @@ body {
         background: url(../images/day-1.png) center center no-repeat;
         position: absolute;
         height: 60px;
-        width: 123px;
+        width: 121px;
         background-size: contain;
         left: calc(50% - 59px);
         top: calc(50% - 131px);
@@ -442,14 +431,15 @@ body {
     }
     &:before {
         content: "";
-        background: url(../images/day-2.png) center center no-repeat;
+        background: url(../images/day-1.png) center center no-repeat;
         position: absolute;
         height: 60px;
-        width: 115px;
+        width: 120px;
         background-size: contain;
-        left: calc(50% - 58px);
-        top: calc(50% + 75px);
+        left: calc(50% - 62px);
+        top: calc(50% + 72px);
         z-index: 1;
+        transform: rotate(180deg);
     }
 }
 .number-active {
@@ -617,7 +607,10 @@ body {
     display: table;
     table-layout: fixed;
     width: 100%;
-    // height: calc(100vh - 44px) !important;
+    overflow: hidden;
+    &.active {
+        overflow: unset;
+    }
 }
 .section-backg {
     background: url('../images/bg.png');

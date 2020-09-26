@@ -178,10 +178,10 @@ jQuery(document).ready(function($){
     var sliderpos = grabber.position();
     var currentSlideIndex;
     var updateHeight = parseInt(document.getElementsByClassName('number')[0].offsetTop);
-    if(updateHeight <= (heightfull *0.3)&&checkScroll==false) {
+    if(updateHeight <= (heightfull *0.2)&&checkScroll==false) {
       $.fn.fullpage.moveSectionUp();
       checkScroll = true;
-    }
+    } 
     if(updateHeight >= (heightfull *0.5)&&checkScroll==false) {
       $.fn.fullpage.moveSectionDown();
       checkScroll = true;
@@ -241,15 +241,18 @@ jQuery(document).ready(function($){
 
   var rect = $('.section')[0].getBoundingClientRect();
   var mouse = {x: 0, y: 0, moved: false};
-  $(".desc-thumbs, .caption").mousemove(function(e) {
+  $(".desc-thumbs, .caption, .bg-eff-2, .section-1, .section-end").mousemove(function(e) {
     mouse.moved = true;
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top; 
   });
   TweenLite.ticker.addEventListener('tick', function(){
     if (mouse.moved){    
-      parallaxIt(".desc-thumbs, .caption", -35); 
-    }
+      parallaxIt(".desc-thumbs, .caption, .bg-eff-2, .section-1, .section-end img", -35); 
+      parallaxIt(".section-end .leff", -15); 
+      // parallaxIt(".section-1", -30); 
+      // parallaxIt(".section-2", -30); 
+    } 
     mouse.moved = false;
   });
   function parallaxIt(target, movement) {
@@ -259,74 +262,8 @@ jQuery(document).ready(function($){
     });
   }
   $(window).on('resize scroll', function(){
-    rect = $('.desc-thumbs, .caption')[0].getBoundingClientRect();
+    rect = $('.desc-thumbs, .caption, .bg-eff, .section-1, .section-end')[0].getBoundingClientRect();
   })
-
-  var hoverMouse = function($el) {
-  $el.each(function() {
-    var $self = $(this);
-    var hover = false;
-    var offsetHoverMax = $self.attr("offset-hover-max") || 0.7;
-    var offsetHoverMin = $self.attr("offset-hover-min") || 0.5;
-
-    var attachEventsListener = function() {
-      $(window).on("mousemove", function(e) {
-        
-        var hoverArea = hover ? offsetHoverMax : offsetHoverMin;
-        var cursor = {
-          x: e.clientX,
-          y: e.clientY + $(window).scrollTop()
-        };
-        var width = $self.outerWidth();
-        var height = $self.outerHeight();
-        var offset = $self.offset();
-        var elPos = {
-          x: offset.left + width / 2,
-          y: offset.top + height / 2
-        };
-        var x = cursor.x - elPos.x;
-        var y = cursor.y - elPos.y;
-        var dist = Math.sqrt(x * x + y * y);
-
-        var mutHover = false;
-
-        if (dist < width * hoverArea) {
-          mutHover = true;
-          if (!hover) {
-            hover = true;
-          }
-          onHover(x, y);
-        }
-        if (!mutHover && hover) {
-          onLeave();
-          hover = false;
-        }
-      });
-    };
-
-    var onHover = function(x, y) {
-      TweenMax.to($self, 0.2, {
-        x: x * 0.1,
-        y: y * 0.1,
-        rotation: x * 0.02,
-        ease: Power2.easeOut
-      });
-    };
-    var onLeave = function() {
-      TweenMax.to($self, 0.1, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        rotation: 0,
-        ease: Elastic.easeOut.config(1, 0.1)
-      });
-    };
-
-      attachEventsListener();
-    });
-  };
-
-  hoverMouse($('.section-end .right ul li'));
 
 });
   

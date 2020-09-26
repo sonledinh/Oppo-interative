@@ -114,29 +114,21 @@ body {
       transition: .1s all;
       right: 0;
       position: relative; }
-      .adm_emag .section-end .right li img {
-        transition: .3s all;
-        right: 0; }
-      .adm_emag .section-end .right li:after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        transition: .3s all;
-        background-size: contain !important; }
-      .adm_emag .section-end .right li:hover img {
-        transition: .3s all;
-        right: -120%; }
-      .adm_emag .section-end .right li:hover:after {
-        transition: .3s all;
-        top: -2px;
-        left: 0; }
     .adm_emag .section-end .right .eff-1:after {
       background: url(../images/end-1.png) no-repeat right top; }
     .adm_emag .section-end .right .eff-2:after {
       background: url(../images/end-2.png) no-repeat right top; }
+.adm_emag .bg-eff {
+  background-size: cover !important;
+  width: 110vw;
+  height: 110vh;
+  position: absolute;
+  top: -5vh;
+  left: -5vw; }
+.adm_emag .bg-eff-1 {
+  background: url("../images/banner-1.jpg") no-repeat top right; }
+.adm_emag .bg-eff-2 {
+  background: url("../images/banner-2.jpg") no-repeat top right; }
 
 #menu-adm {
   display: inline-flex;
@@ -277,8 +269,8 @@ body {
     width: 86px; }
   .track:after {
     content: "";
-    background-image: linear-gradient(#fbf3f1, #f3dbd5);
-    height: calc(50% - 145px);
+    background-image: linear-gradient(#f2dbd4, #f3dbd5);
+    height: 100%;
     width: 86px;
     position: absolute;
     top: 0;
@@ -286,23 +278,6 @@ body {
     z-index: 3;
     opacity: 1;
     transition: 2.4s ease; }
-  .track:before {
-    content: "";
-    background-image: linear-gradient(#e1c8c0, #e1c8c1);
-    height: calc(50% - 70px);
-    width: 86px;
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 43px);
-    z-index: 3;
-    opacity: 1;
-    transition: 2.4s ease; }
-  .track.active:after {
-    opacity: 0;
-    transition: 0s ease; }
-  .track.active:before {
-    opacity: 0;
-    transition: 0s ease; }
   .track.active .number {
     z-index: 5; }
 
@@ -361,21 +336,22 @@ body {
     background: url(../images/day-1.png) center center no-repeat;
     position: absolute;
     height: 60px;
-    width: 123px;
+    width: 121px;
     background-size: contain;
     left: calc(50% - 59px);
     top: calc(50% - 131px);
     z-index: 1; }
   .hver-ripper:before {
     content: "";
-    background: url(../images/day-2.png) center center no-repeat;
+    background: url(../images/day-1.png) center center no-repeat;
     position: absolute;
     height: 60px;
-    width: 115px;
+    width: 120px;
     background-size: contain;
-    left: calc(50% - 58px);
-    top: calc(50% + 75px);
-    z-index: 1; }
+    left: calc(50% - 62px);
+    top: calc(50% + 72px);
+    z-index: 1;
+    transform: rotate(180deg); }
 
 .number-active {
   top: calc(50% - 144px) !important; }
@@ -510,7 +486,10 @@ body {
 .fp-section.fp-table, .fp-slide.fp-table {
   display: table;
   table-layout: fixed;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
+  .fp-section.fp-table.active, .fp-slide.fp-table.active {
+    overflow: unset; }
 
 .section-backg {
   background: url("../images/bg.png");
