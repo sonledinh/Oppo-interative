@@ -21,7 +21,7 @@ body {
     }
 }
  
-.adm_emag {
+.adm_emag { 
     img {
         max-width: 100%;
     }    
@@ -250,13 +250,13 @@ body {
 }
 .section-2 {
     h2 {
-        color: #96F2FF;
+        color: #A37545;
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 15px;
     }
     .desc {
-        color: #fff;
+        color: #000000;
         max-width: 505px;
         p {
             font-size: 14px;
@@ -443,7 +443,7 @@ body {
     }
 }
 .number-active {
-    top: calc(50% - 144px) !important;
+    top: calc(50% - 88px) !important;
 }
 
 .track-upper {
@@ -465,7 +465,7 @@ body {
 .btn-mouse {
     opacity: .7;
     text-align: center;
-    position: absolute;
+    position: absolute; 
     left: 0;
     bottom: 30px;
     width: 100%;

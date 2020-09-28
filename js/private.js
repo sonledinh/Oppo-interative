@@ -167,7 +167,7 @@ jQuery(document).ready(function($){
         }
       }
       $('.number').css({
-        'top' : 'calc(50% - 144px)'
+        'top' : 'calc(50% - 88px)'
       }); 
        checkScroll = false;
 
@@ -182,7 +182,7 @@ jQuery(document).ready(function($){
       $.fn.fullpage.moveSectionUp();
       checkScroll = true;
     } 
-    if(updateHeight >= (heightfull *0.5)&&checkScroll==false) {
+    if(updateHeight >= (heightfull *0.6)&&checkScroll==false) {
       $.fn.fullpage.moveSectionDown();
       checkScroll = true;
     }
@@ -190,7 +190,7 @@ jQuery(document).ready(function($){
  
   $(document).on('wheel', function (e) {
       $('.number').css({
-        'top' : 'calc(50% - 144px)'
+        'top' : 'calc(50% - 88px)'
       });
   })
 

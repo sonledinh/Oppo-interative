@@ -213,12 +213,12 @@ body {
   max-width: 430px; }
 
 .section-2 h2 {
-  color: #96F2FF;
+  color: #A37545;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 15px; }
 .section-2 .desc {
-  color: #fff;
+  color: #000000;
   max-width: 505px; }
   .section-2 .desc p {
     font-size: 14px; }
@@ -354,7 +354,7 @@ body {
     transform: rotate(180deg); }
 
 .number-active {
-  top: calc(50% - 144px) !important; }
+  top: calc(50% - 88px) !important; }
 
 .track-upper {
   top: -2000px;
