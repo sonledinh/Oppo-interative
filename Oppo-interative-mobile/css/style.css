@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url("../fonts/quicksan/Quicksand-Bold.woff2") format("woff2"), url("../fonts/quicksan/Quicksand-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Quicksand';
+  src: url("../fonts/quicksan/Quicksand-Light.woff2") format("woff2"), url("../fonts/quicksan/Quicksand-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Quicksand';
+  src: url("../fonts/quicksan/Quicksand-Regular.woff2") format("woff2"), url("../fonts/quicksan/Quicksand-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Quicksand';
+  src: url("../fonts/quicksan/Quicksand-Medium.woff2") format("woff2"), url("../fonts/quicksan/Quicksand-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Quicksand';
+  src: url("../fonts/quicksan/Quicksand-SemiBold.woff2") format("woff2"), url("../fonts/quicksan/Quicksand-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; }
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  transition: .3s all;
+  position: relative;
+  font-weight: normal;
+  overflow-x: hidden;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  background: #fff; }
+  body h1, body h2, body h3, body h4, body h5, body h6, body p, body label, body ul, body li, body .card, body a {
+    text-decoration: none !important;
+    transition: .3s all;
+    outline: none !important; }
+
+main {
+  margin-top: 46px; }
+
+img {
+  max-width: 100%; }
+
+.adm_emag img {
+  object-fit: cover; }
+.adm_emag .banner {
+  position: relative;
+  text-align: center;
+  background: url("../images/bn-after.svg") no-repeat center center;
+  background-size: cover;
+  padding-bottom: 65px; }
+  .adm_emag .banner .avar-banner {
+    position: relative; }
+    .adm_emag .banner .avar-banner img {
+      width: 100%; }
+  .adm_emag .banner .btn-k14 {
+    margin-bottom: 30px; }
+  .adm_emag .banner .desc {
+    padding: 0 30px !important;
+    color: #fff;
+    text-align: center !important; }
+.adm_emag .box-title-bn {
+  position: relative;
+  margin-top: -80px;
+  padding: 0 30px; }
+.adm_emag .desc-wpper {
+  padding: 0 20px;
+  text-align: justify; }
+  .adm_emag .desc-wpper p {
+    margin-bottom: 15px; }
+    .adm_emag .desc-wpper p:last-child {
+      margin-bottom: 0; }
+.adm_emag .title-wper {
+  margin-bottom: 20px; }
+  .adm_emag .title-wper h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #A37545; }
+.adm_emag .box-wapper {
+  padding-bottom: 60px; }
+  .adm_emag .box-wapper .avarta-top img {
+    width: 100%; }
+  .adm_emag .box-wapper .desc {
+    padding: 0 20px;
+    text-align: justify; }
+    .adm_emag .box-wapper .desc p {
+      margin-bottom: 15px;
+      letter-spacing: -0.01em; }
+      .adm_emag .box-wapper .desc p:last-child {
+        margin-bottom: 0; }
+      .adm_emag .box-wapper .desc p a {
+        color: #5CC5FF; }
+  .adm_emag .box-wapper.bn-pink {
+    background: url("../images/pink.svg") no-repeat center center;
+    background-size: cover; }
+  .adm_emag .box-wapper.bn-green {
+    background: url("../images/green.svg") no-repeat center center;
+    background-size: cover;
+    color: #fff; }
+    .adm_emag .box-wapper.bn-green .head-clock .title-clock h3 {
+      color: #fff; }
+.adm_emag .box-wapper p, .adm_emag .title-banner, .adm_emag .btn-k14, .adm_emag .desc p, .adm_emag .title-clock h3, .adm_emag .clock-time {
+  visibility: visible;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1.25s;
+  -moz-animation-duration: 1.25s;
+  -ms-animation-duration: 1.25s;
+  -o-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+  opacity: 0; }
+  .adm_emag .box-wapper p.animated, .adm_emag .title-banner.animated, .adm_emag .btn-k14.animated, .adm_emag .desc p.animated, .adm_emag .title-clock h3.animated, .adm_emag .clock-time.animated {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    opacity: 1; }
+
+.title-banner {
+  margin-bottom: 20px; }
+
+.slide-wpper {
+  margin-bottom: 35px; }
+  .slide-wpper button {
+    border: 0;
+    width: 39px;
+    height: 39px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 15px);
+    background: transparent;
+    outline: none; }
+    .slide-wpper button.next {
+      right: 5px;
+      background: url("../images/right.svg"); }
+    .slide-wpper button.prev {
+      left: 5px;
+      background: url("../images/left.svg"); }
+  .slide-wpper .item img {
+    height: 280px;
+    width: 100%; }
+
+.head-clock {
+  text-align: center; }
+  .head-clock .clock-time {
+    margin-bottom: 10px; }
+  .head-clock .title-clock {
+    margin-bottom: 30px; }
+    .head-clock .title-clock h3 {
+      letter-spacing: -0.01em;
+      color: #412F1F;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: initial;
+      margin-bottom: 20px; }
+
+.adm-opp {
+  width: calc(100% + 40px);
+  position: relative;
+  left: -20px;
+  padding: 30px 0; }
+  .adm-opp img {
+    width: 100%; }
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .slide-wpper .item img {
+    height: 100vh; } }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .slide-wpper .item img {
+    height: 512px; } }
+@media (max-width: 1365px) and (min-width: 1024px) {
+  .slide-wpper .item img {
+    height: 680px; } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+/*# sourceMappingURL=style.css.map */
