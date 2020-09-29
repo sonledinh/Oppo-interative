@@ -136,6 +136,13 @@ body {
   background: url("../images/banner-1.jpg") no-repeat top right; }
 .adm_emag .bg-eff-2 {
   background: url("../images/banner-2.jpg") no-repeat top right; }
+@media (max-height: 800px) {
+  .adm_emag .section-2 .caption .desc {
+    max-width: 700px; }
+    .adm_emag .section-2 .caption .desc p {
+      font-size: 14px; }
+  .adm_emag .section-2 .btn-k14 {
+    margin-top: 30px; } }
 
 #menu-adm {
   display: inline-flex;
@@ -246,7 +253,19 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding: 0; }
+  .section-bg-1 .section-inner .caption {
+    width: 105vw;
+    height: 110vh;
+    top: 0;
+    right: -5vw;
+    padding: 0px 95px;
+    background: url(../images/banner-1.jpg) no-repeat top right;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center; }
 
 .section-track {
   opacity: 0;

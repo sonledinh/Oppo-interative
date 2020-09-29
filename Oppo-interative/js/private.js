@@ -247,19 +247,18 @@ jQuery(document).ready(function($){
 
   var rect = $('.section')[0].getBoundingClientRect();
   var mouse = {x: 0, y: 0, moved: false};
-  $(".desc-thumbs, .caption, .bg-eff-2, .section-1, .section-end, .section-end .right").mousemove(function(e) {
+  $(".desc-thumbs, .caption, .bg-eff-2, .section-end, .section-end .right").mousemove(function(e) {
     mouse.moved = true;
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top; 
   });
   TweenLite.ticker.addEventListener('tick', function(){
     if (mouse.moved){    
-      parallaxIt(".desc-thumbs, .caption, .bg-eff-2, .section-1, .section-end img", -35); 
+      parallaxIt(".desc-thumbs, .bg-eff-2, .section-end img", -35); 
       parallaxIt(".section-end .leff", -15); 
       parallaxIt(".section-end .right", -25); 
-      // parallaxIt(".section-1", -30); 
-      // parallaxIt(".section-2", -30); 
-    } 
+      parallaxIt(".caption", -20); 
+    }   
     mouse.moved = false;
   });
   function parallaxIt(target, movement) {
@@ -269,8 +268,9 @@ jQuery(document).ready(function($){
     });
   }
   $(window).on('resize scroll', function(){
-    rect = $('.desc-thumbs, .caption, .bg-eff, .section-1, .section-end, .section-end .right')[0].getBoundingClientRect();
+    rect = $('.desc-thumbs, .caption, .bg-eff, .section-end, .section-end .right')[0].getBoundingClientRect();
   })
 
 });
   
+ 

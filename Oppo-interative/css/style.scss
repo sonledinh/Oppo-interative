@@ -24,12 +24,12 @@ body {
 .adm_emag { 
     img {
         max-width: 100%;
-    }    
+    }     
     .caption {
         p { 
             font-size: 16px;
             margin-bottom: 10px;
-            &:last-child {
+            &:last-child { 
                 margin-bottom: 0;
             }
         }
@@ -42,7 +42,7 @@ body {
     }
     .avarta-22h {
         img {
-            height: 100vh;
+            height: 100vh; 
             object-fit: cover;
             cursor: zoom-in;
         }
@@ -140,7 +140,20 @@ body {
     .bg-eff-2 {
         background: url('../images/banner-2.jpg') no-repeat top right;
     }
-}
+    @media (max-height: 800px) {
+        .section-2 {
+            .caption .desc {
+                max-width: 700px;
+                p {
+                    font-size: 14px;
+                }
+            }
+            .btn-k14 {
+                margin-top: 30px;
+            }
+        }
+    } 
+} 
 #menu-adm {
     display: inline-flex;
     width: 60px;
@@ -296,6 +309,19 @@ body {
         height: 100vh;
         display: flex;
         align-items: center;
+        padding: 0;
+        .caption {
+            width: 105vw;
+            height: 110vh;
+            top: 0;
+            right: -5vw;
+            padding: 0px 95px;
+            background: url(../images/banner-1.jpg) no-repeat top right;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
     }
 }
 .section-bg-2 {
