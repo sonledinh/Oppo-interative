@@ -254,7 +254,7 @@ jQuery(document).ready(function($){
   });
   TweenLite.ticker.addEventListener('tick', function(){
     if (mouse.moved){    
-      parallaxIt(".desc-thumbs, .bg-eff-2, .section-end img", -35); 
+      parallaxIt(".desc-thumbs, .bg-eff-2, .section-end img", -20); 
       parallaxIt(".section-end .leff", -15); 
       parallaxIt(".section-end .right", -25); 
       parallaxIt(".caption", -20); 
